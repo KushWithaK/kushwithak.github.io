@@ -4,6 +4,8 @@
 <title>Eden In Nature</title>
 	<style> head {
 	  background-image: url('https://kushwithak.github.io/EIN/bg_join.png');
+	  background-repeat: no-repeat;
+	  background-attachment: cover;
 	  background-position: center;
 	  background-size: cover;
 	} </style>
@@ -21,6 +23,7 @@
 	<!-- Set Username as Cookie -->
 	function putCookie(form){
 		setCookie("Username", form[0].user.value);
+		setCookie("Passcode", form[0].code.value);
 		return true;
 	}
 	</script>
