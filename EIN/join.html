@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <title>Eden In Nature</title>
-<br><br>
+	<br><br>
+	<style> body {
+	  background-image: url('https://kushwithak.github.io/EIN/bg_join.png');
+	  background-repeat: no-repeat;
+	  background-attachment: cover;
+	  background-position: center;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  text-align: center;
+	} </style>
+	<style> form {
+	  text-align: center;
+	} </style>
 <Body>
-<head><strong><font size="16">Sign up to join!</font></strong></head>
-<br><br>
-<form>
-  <label for="username">Username:</label><br>
-  <input type="text" id="username" name="username" value=""><br>
-  <label for="passcode">Passcode:</label><br>
-  <input type="text" id="passcode" name="passcode" value=""><br><br>
-  <button type="submit" value="Submit">Submit</button><br><br>
-  <button type="reset" value="Reset">Reset</button>
-</form>
-<style> body {
-  background-image: url('https://kushwithak.github.io/EIN/bg_join.png');
-  background-repeat: no-repeat;
-  background-attachment: cover;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} </style>
+	<strong><font size="16">Sign up to join!</font></strong>
 </Body>
+	<br><br>
+<form action="join.php" method="post">
+	<label for="username">Username:</label>
+	<br>
+	<input type="text" id="username" name="username" value="">
+	<br>
+	<label for="passcode">Passcode:</label>
+	<br>
+	<input type="password" id="passcode" name="passcode" value="">
+	<br><br>
+	<button type="submit" value="Submit">Submit</button>
+</form>
