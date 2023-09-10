@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    $phpurl='authenticate.php?user=' . getCookie('Username') . '&code=' . getCookie('Passcode');
+?>
 <html>
 <!-- Title Manages Style Information -->
 <title>Eden In Nature</title>
@@ -30,7 +33,7 @@
 </head>
 
 <body>
-<form action="authenticate.php" method="post">
+<form action="<?php echo $phpurl ?>" method="post">
   <div class="container">
     <label for="user"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="user" required>
