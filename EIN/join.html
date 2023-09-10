@@ -1,32 +1,52 @@
 <!DOCTYPE html>
+<html>
+<!-- Title Manages Style Information -->
 <title>Eden In Nature</title>
-	<br><br>
-	<style> body {
+	<style> head {
 	  background-image: url('https://kushwithak.github.io/EIN/bg_join.png');
-	  background-repeat: no-repeat;
-	  background-attachment: cover;
 	  background-position: center;
-	  -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
 	  background-size: cover;
-	  text-align: center;
 	} </style>
-	<style> form {
-	  text-align: center;
-	} </style>
-<Body>
-	<strong><font size="16">Sign up to join!</font></strong>
-</Body>
-	<br><br>
-<form action="join.php" method="post">
-	<label for="username">Username:</label>
-	<br>
-	<input type="text" id="username" name="username" value="">
-	<br>
-	<label for="passcode">Passcode:</label>
-	<br>
-	<input type="password" id="passcode" name="passcode" value="">
-	<br><br>
-	<button type="submit" value="Submit">Submit</button>
+<!-- Head Manages Cookies Information -->
+<head>
+    <script>
+	<!-- Grab Today's Date -->
+	var today = new Date();
+	<!-- Add 30 Days for Expiration Date -->
+	var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+	<!-- Set Expiration & Declare Cookies -->
+	function setCookie(name, value){
+		document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+	}
+	<!-- Set Username as Cookie -->
+	function putCookie(form){
+		setCookie("Username", form[0].user.value);
+		return true;
+	}
+	</script>
+</head>
+
+<body>
+<form action="Authenticate.php" method="post">
+  <div class="container">
+    <label for="user"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="user" required>
+
+    <label for="code"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="code" required>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="submit" onclick="putCookie(document.getElementsByTagName('form'));">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Save Info
+    </label>
+  </div>
+
+  <div class="container">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
 </form>
+</body>
+</html>
